@@ -3,7 +3,8 @@ https://create-react-app.dev/
 한방에 실행하겠다.
 디렉토리 생성하고, 터미널 띄우고 현 디렉토리에 개발환경을 세팅
 npx create-react-app . 
-num run start: 실행
+npm run start: 실행
+npm install react --save
 
 세탁
 src/index.js : entry 파일
@@ -57,3 +58,8 @@ state는 내부적으로 사용하는 상태
 두번재 원소는 상태의 값을 호출하는 함수다.
 첫번째 원소는 읽을 때 쓴다.
 두번째 원소는 바꿀때 쓴다.
+
+
+Day 2
+
+https://stackblitz.com/?starters=frontend

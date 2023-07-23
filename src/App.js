@@ -1,20 +1,35 @@
 import './App.css';
 import {useState} from 'react';
 
-function Counter(props) {
-  let countState = useState(props.initValue);
-  let count = countState[0];
-  let setCount = countState[1];
-  console.log(countState)
+// function Counter(props){
+//   const title = props.title;
+//   const initValue = props.body;
 
-  function up(){
-    console.log(1)
-    setCount(++count);
+function Counter({ title, initValue }) {
+  // const countState = useState(initValue);
+  // const count = countState[0]; //let 대신 const로 붙으면 수정이 안됨
+  // const setCount = countState[1];
+
+  const [count, setCount] = useState(initValue);
+  const [step, setStep] = useState(1);
+  // console.log(countState);
+
+  function up() {
+    setCount(count+step);
   }
-  return <div>
-    <h1>{props.title}</h1>
-    <button onClick={up}>+</button> {count}
-  </div>
+
+  return (
+    // function(){} == ()=>{}
+    <div>
+      <h1>{title}</h1>
+      <button onClick={up}>+</button>
+      <input type="number" value={step} onChange={(evt)=>{
+        // console.log('change', evt.target.value);
+        setStep(Number(evt.target.value));
+      }}/>
+      {count}
+    </div>
+  );
 }
 
 function App() {
