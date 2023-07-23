@@ -1,4 +1,5 @@
 import './App.css';
+import { Container } from '@mui/system';
 import {useState, useEffect} from 'react';
 
 // function Counter(props){
@@ -60,10 +61,12 @@ function CounterUseEffect(){
 }
 function App() {
   return (
+    <Container>
     <div>
       <Counter title="불면증 카운터" initValue={10}></Counter>
       <CounterUseEffect></CounterUseEffect>
     </div>
+    </Container>
   );
 }
 
